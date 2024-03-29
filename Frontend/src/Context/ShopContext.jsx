@@ -23,12 +23,12 @@ const ShopContextProvider = (props) => {
     const [cartItem, setCartItem] = useState(getDefaultCart());
 
    useEffect(()=> {
-          fetch('http://localhost:5000/allproducts')
+          fetch('https://mern-4-rotr.onrender.com/allproducts')
           .then((response)=> response.json())
           .then((data)=> setAll_Product(data))
 
            if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:5000/getcart', {
+            fetch('https://mern-4-rotr.onrender.com/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -48,7 +48,7 @@ const ShopContextProvider = (props) => {
              setCartItem((prev) => ({... prev, [itemId]:prev[itemId]+ 1 }))
              setPopupMessage('Item added to cart successfully!');
              setShowPopup(true);
-             fetch('http://localhost:5000/addtocart', {
+             fetch('https://mern-4-rotr.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -84,7 +84,7 @@ const ShopContextProvider = (props) => {
      const removeFromCart = (itemId) => {
         setCartItem((prev) => ({... prev, [itemId]:prev[itemId]- 1}))
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:5000/removefromcart', {
+            fetch('https://mern-4-rotr.onrender.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
