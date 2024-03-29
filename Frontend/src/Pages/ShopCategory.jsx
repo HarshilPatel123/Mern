@@ -14,7 +14,7 @@ const ShopCategory = (props) => {
        <img className="shopcategory-banner" src={props.banner} alt='' />
        <div className='shopcategory-indexSort'>
         <p>
-          <span> Total  products </span> Out of {all_product.length}
+          <span style={{fontSize: "22px", fontWeight:"600"}}> Related Products Out of {all_product.length}: </span> 
         </p>
         {/* <div className='shopcategory-sort'>
           Sort by <img src={dropdown_icon} alt=''/>

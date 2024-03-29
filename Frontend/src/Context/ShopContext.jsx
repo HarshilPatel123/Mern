@@ -1,10 +1,6 @@
 
-
-
-
 import { createContext, useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import LoginSignup from '../Pages/LoginSignup'
+
 
 export const ShopContext = createContext();
 
