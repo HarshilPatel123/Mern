@@ -23,12 +23,12 @@ const ShopContextProvider = (props) => {
     const [cartItem, setCartItem] = useState(getDefaultCart());
 
    useEffect(()=> {
-          fetch('https://mern-4-rotr.onrender.com/allproducts')
+          fetch('http://localhost:5000/allproducts')
           .then((response)=> response.json())
           .then((data)=> setAll_Product(data))
 
            if(localStorage.getItem('auth-token')){
-            fetch('https://mern-4-rotr.onrender.com/getcart', {
+            fetch('http://localhost:5000/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -48,7 +48,7 @@ const ShopContextProvider = (props) => {
              setCartItem((prev) => ({... prev, [itemId]:prev[itemId]+ 1 }))
              setPopupMessage('Item added to cart successfully!');
              setShowPopup(true);
-             fetch('https://mern-4-rotr.onrender.com/addtocart', {
+             fetch('http://localhost:5000/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -84,7 +84,7 @@ const ShopContextProvider = (props) => {
      const removeFromCart = (itemId) => {
         setCartItem((prev) => ({... prev, [itemId]:prev[itemId]- 1}))
         if(localStorage.getItem('auth-token')){
-            fetch('https://mern-4-rotr.onrender.com/removefromcart', {
+            fetch('http://localhost:5000/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -127,8 +127,30 @@ const ShopContextProvider = (props) => {
         return totalItem
     }
 
+    // const checkout = async() => {
+    //     try {
+    //         const res = await fetch("http://localhost:5000/checkout",{
+    //             method: "POST",
+    //             headers: {
+    //                 "content-type": "application/json",
+    //             },
+    //             mode: "cors",
+    //             body:JSON.stringify({
+    //                 items: {
+    //                     quantity: getTotalCartAmount(),
+    //                     totalItem: getTotalCartItems()
+    //                 },
+    //             })
+    //         });
+    //         const data = await res.json();
+    //         window.location = data.url;
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 
-     const contextValue = { all_product, getTotalCartAmount,getTotalCartItems, showPopup, popupMessage, handleClosePopup,cartItem, addToCart, removeFromCart};
+
+     const contextValue = { all_product, getTotalCartAmount,getTotalCartItems, getDefaultCart, showPopup, popupMessage, handleClosePopup,cartItem, addToCart, removeFromCart};
     
 
     return (

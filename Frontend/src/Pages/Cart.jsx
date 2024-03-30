@@ -3,10 +3,12 @@ import { useContext } from 'react'
 import { ShopContext } from '../Context/ShopContext'
 
 import './Css/Cart.css'
+import { Link } from 'react-router-dom'
+// import Checkout from './Checkout'
 
 const Cart = () => {
 
-    const { all_product, cartItem, getTotalCartAmount, removeFromCart } = useContext(ShopContext)
+    const { all_product, cartItem, getTotalCartItems, getTotalCartAmount, removeFromCart } = useContext(ShopContext)
 
     return (
         <div className='cartitems'>
@@ -58,7 +60,7 @@ const Cart = () => {
                     <h3> ${getTotalCartAmount()}</h3>
                   </div>
                 </div>
-                <button> PROCEED TO CHECKOUT </button>
+                <button> {getTotalCartItems() > 0? <Link to={"/checkout"} >PROCEED TO CHECKOUT</Link> : <p> PROCEED TO CHECKOUT</p>} </button>
               </div>
               <div className='cartitems-promocode'>
                 <p> If you have a Promo Code, Enter it here </p>

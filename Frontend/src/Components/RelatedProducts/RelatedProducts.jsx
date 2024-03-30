@@ -1,5 +1,5 @@
 import './RelatedProducts.css'
-import data_product from '../assets/Assets/data'
+
 import { useEffect, useState } from 'react'
 import Item from '../Item/item'
 

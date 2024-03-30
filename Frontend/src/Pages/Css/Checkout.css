@@ -1,0 +1,22 @@
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+.outer{
+    color: blueviolet;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+
+.inner{
+   font-size: medium;
+   font-weight: 400;
+   color: black;
+}

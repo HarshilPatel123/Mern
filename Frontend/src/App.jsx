@@ -5,10 +5,12 @@ import ShopCategory from './Pages/ShopCategory'
 import Product from './Pages/Product'
 import Footer from './Components/Footer/Footer'
 import Cart from './Pages/Cart'
+import Checkout from './Pages/Checkout'
 import LoginSignup from './Pages/LoginSignup'
 import men_banner from './Components/assets/Assets/banner_mens.png'
 import women_banner from './Components/assets/Assets/banner_women.png'
 import kid_banner from './Components/assets/Assets/banner_kids.png'
+
 
 
 const App = () => {
@@ -25,7 +27,9 @@ const App = () => {
          <Route path=':productId' element={<Product></Product>} />
         </Route>
         <Route path='/cart' element={<Cart></Cart>} />
+        <Route path='/checkout' element={<Checkout></Checkout>} />
         <Route path='/login' element={<LoginSignup></LoginSignup>} />
+
       </Routes>
       <Footer/>
      </BrowserRouter>

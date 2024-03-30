@@ -9,21 +9,21 @@ const multer = require("multer");
 const path = require('path')
 const cors = require("cors");
 const bodyParser = require('body-parser');
+const router = express.Router();
 const Razorpay = require('razorpay');
 
+
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:"http://localhost:5173"}));
 
 mongoose.connect("mongodb+srv://harshilpatel29072003:14OoUFt6aX4Fa3RV@cluster1.sn0qg1d.mongodb.net/E-commerce")
 
- const instance = new Razorpay({
-    key_id: "rzp_test_5AI1hcWWmUdOL4",
-    key_secret:process.env.RAZOR_PAY_API_SECRET_KEY ,
-});
+//  const instance = new Razorpay({
+//     key_id: "rzp_test_5AI1hcWWmUdOL4",
+//     key_secret:process.env.RAZOR_PAY_API_SECRET_KEY ,
+// });
 
-const router = express.Router();
-
-app.use('/api', router)
+const stripe = require("stripe")(process.env.SECRET_KEY)
 
 
 app.get("/", (req, res)=> {
@@ -300,7 +300,8 @@ app.post('/removefromcart', fetchUser, async(req, res)=> {
 app.post('/getcart', fetchUser, async(req,res)=> {
     console.log('GetCart');
     let userData = await Users.findOne({_id: req.user.id});
-    res.json(userData.cartData);
+    // console.log(userData);
+    res.send(userData.cartData);
 })
 
 
@@ -308,31 +309,92 @@ app.post('/getcart', fetchUser, async(req,res)=> {
 
 
 
-const razorpay = new Razorpay({
-  key_id: 'rzp_test_5AI1hcWWmUdOL4',
-  key_secret: '0PocGzg4zJLdqCUrfGuKqUQ',
-});
+// const razorpay = new Razorpay({
+//     key_id: process.env.KEY,
+//     key_secret: process.env.SECRET_KEY
+//   });
+  
+   
+// router.post('/razorpay', async (req, res) => {
+//     const { amount, currency, receipt } = req.body;
+  
+//     const options = {
+//       amount: amount * 100, // Amount in smallest currency unit (e.g., paise for INR)
+//       currency,
+//       receipt
+//     };
+  
+//     try {
+//       const payment = await razorpay.orders.create(options);
+//       res.json({ id: payment.id });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ error: 'Payment initialization failed' });
+//     }
+//   });
+  
+//   router.post('/razorpay/callback', (req, res) => {
+//     const { body } = req;
+//     const { order_id, payment_id, signature } = body;
+  
+//     // Verify the payment signature
+  
+//     res.json({ success: true });
+//   });
 
-app.use(bodyParser.json());
+// app.post("/checkout", async(req, res) => {
+//     try{
+//     const session = await stripe.checkout.session.create({
+//         payment_method_types: ["card"],
+//         mode: "payment",
+//         line_items: req.body.items.map(item => {
+//             return{
+//                 price_data: {
+//                     currency: "inr",
+//                     product_data: {
+//                         name: item.name,
+//                     },
+//                     unit_amount: (item.price)*100
+//                 },
+//                 quantity: item.quantity
+//             }
+//         }),
+//         success_url: "http://localhost:5173/success",
+//         cancel_url:"http://localhost:5173/cancel"
+//     })
+//     res.json({url:session.url})
+//     console.log(url);
+// }catch (error){
+//      res.status(500).json({error: error.message})
+// }
+// })
 
-app.post('/create-order', async (req, res) => {
-  const { amount, currency } = req.body;
 
-  const options = {
-    amount: amount * 100, // amount in smallest currency unit (in paisa for INR)
-    currency,
-    receipt: 'receipt#1',
-    payment_capture: 1,
-  };
+// const razorpay = new Razorpay({
+//   key_id: 'rzp_test_5AI1hcWWmUdOL4',
+//   key_secret: '0PocGzg4zJLdqCUrfGuKqUQ',
+// });
 
-  try {
-    const response = await razorpay.orders.create(options);
-    res.json(response);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Failed to create order');
-  }
-});
+// app.use(bodyParser.json());
+
+// app.post('/create-order', async (req, res) => {
+//   const { amount, currency } = req.body;
+
+//   const options = {
+//     amount: amount * 100, // amount in smallest currency unit (in paisa for INR)
+//     currency,
+//     receipt: 'receipt#1',
+//     payment_capture: 1,
+//   };
+
+//   try {
+//     const response = await razorpay.orders.create(options);
+//     res.json(response);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send('Failed to create order');
+//   }
+// });
 
 
 

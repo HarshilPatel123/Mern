@@ -43,7 +43,9 @@ const isContinueDisabled = () => {
           window.location.replace("/");
          }
          else{
+          setFormData({})
           setError(true)
+
          }
 
    }
@@ -57,17 +59,23 @@ const isContinueDisabled = () => {
             'Content-type': 'application/json'
           },
           body: JSON.stringify(formData),
-         }).then((response)=> response.json()).then((data)=> responseData=data);
+         }).then((response)=> response.json(),).then((data)=> responseData = data);
           console.log(responseData);
          if(responseData.success){
+         
+        
+          // console.log(responseData.body.email)
+          // console.log(responseData.body.name)
           setError(false)
           console.log(responseData.token);
           localStorage.setItem('auth-token', responseData.token);
           window.location.replace("/login");
-         }
-         else{
+         }else{
+          setFormData({})
           setError(true)
+    
          }
+       
         
 
    }
