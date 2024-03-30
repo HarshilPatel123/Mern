@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import './Css/Checkout.css'
 import Shop from '../Pages/Shop'
+import NavBar from '../Components/NavBar'
 
 
 
@@ -29,7 +30,9 @@ const Checkout = (props) => {
         <h1 className="outer"> Thank you for your Order !! </h1>
         <div className="inner"> Your order will reach to your door step within 2 days !!</div>
         <p>Redirecting to home page in {seconds} seconds...</p>  </div> :
-        <Shop></Shop> } 
+        <>
+        <Shop ></Shop> 
+        </>} 
        
        </>
   )

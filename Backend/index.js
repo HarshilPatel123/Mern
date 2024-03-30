@@ -14,7 +14,7 @@ const Razorpay = require('razorpay');
 
 
 app.use(express.json());
-app.use(cors({origin:"http://localhost:5173"}));
+app.use(cors());
 
 mongoose.connect("mongodb+srv://harshilpatel29072003:14OoUFt6aX4Fa3RV@cluster1.sn0qg1d.mongodb.net/E-commerce")
 
