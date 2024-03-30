@@ -10,11 +10,21 @@
 }
 
 .nav-logo{
-    width: 200px;
+    width: 90px;
 }
 
 .nav-profile{
     width: 75px
+}
+
+.final{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.final h2{
+    font-size: 30px;
 }
 
 @media(max-width: 800px){
