@@ -28,7 +28,7 @@ const isContinueDisabled = () => {
 
            console.log("Login Function Executed!!!", formData);
            let responsed;
-           await fetch("https://mern4-biw0.onrender.com/login", {
+           await fetch("http://localhost:5000/login", {
            method: 'POST',
            headers: {
             Accept: 'application/form-data',
@@ -52,7 +52,7 @@ const isContinueDisabled = () => {
    const SignUp = async () => {
          console.log("Sign up function Executed !!", formData);
          let responseData;
-         await fetch("https://mern4-biw0.onrender.com/signup", {
+         await fetch("http://localhost:5000/signup", {
           method: 'POST',
           headers: {
             Accept: 'application/form-data',
