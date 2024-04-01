@@ -23,12 +23,12 @@ const ShopContextProvider = (props) => {
     const [cartItem, setCartItem] = useState(getDefaultCart());
 
    useEffect(()=> {
-          fetch('https://mern3-l4l5.onrender.com/allproducts')
+          fetch('https://mern4-biw0.onrender.com/allproducts')
           .then((response)=> response.json())
           .then((data)=> setAll_Product(data))
 
            if(localStorage.getItem('auth-token')){
-            fetch('https://mern3-l4l5.onrender.com/getcart', {
+            fetch('https://mern4-biw0.onrender.com/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -48,7 +48,7 @@ const ShopContextProvider = (props) => {
              setCartItem((prev) => ({... prev, [itemId]:prev[itemId]+ 1 }))
              setPopupMessage('Item added to cart successfully!');
              setShowPopup(true);
-             fetch('https://mern3-l4l5.onrender.com/addtocart', {
+             fetch('https://mern4-biw0.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -84,7 +84,7 @@ const ShopContextProvider = (props) => {
      const removeFromCart = (itemId) => {
         setCartItem((prev) => ({... prev, [itemId]:prev[itemId]- 1}))
         if(localStorage.getItem('auth-token')){
-            fetch('https://mern3-l4l5.onrender.com/removefromcart', {
+            fetch('https://mern4-biw0.onrender.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -129,7 +129,7 @@ const ShopContextProvider = (props) => {
 
     // const checkout = async() => {
     //     try {
-    //         const res = await fetch("https://mern3-l4l5.onrender.com/checkout",{
+    //         const res = await fetch("https://mern4-biw0.onrender.com/checkout",{
     //             method: "POST",
     //             headers: {
     //                 "content-type": "application/json",
