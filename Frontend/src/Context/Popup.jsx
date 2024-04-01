@@ -6,7 +6,7 @@ const Popup = ({ onClose, message}) => {
     // Automatically close popup after 3 seconds
     const timer = setTimeout(() => {
       onClose();
-    }, 1200);
+    }, 1400);
 
     return () => clearTimeout(timer);
   }, [onClose]);

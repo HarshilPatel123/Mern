@@ -8,9 +8,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require('path')
 const cors = require("cors");
-const bodyParser = require('body-parser');
-const router = express.Router();
-const Razorpay = require('razorpay');
+
 
 
 app.use(express.json());
@@ -23,7 +21,7 @@ mongoose.connect("mongodb+srv://harshilpatel29072003:14OoUFt6aX4Fa3RV@cluster1.s
 //     key_secret:process.env.RAZOR_PAY_API_SECRET_KEY ,
 // });
 
-const stripe = require("stripe")(process.env.SECRET_KEY)
+// const stripe = require("stripe")(process.env.SECRET_KEY)
 
 
 app.get("/", (req, res)=> {
