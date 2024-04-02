@@ -23,12 +23,12 @@ const ShopContextProvider = (props) => {
     const [cartItem, setCartItem] = useState(getDefaultCart());
 
    useEffect(()=> {
-          fetch('https://mern-eight-gray.vercel.app/allproducts')
+          fetch(`${window.location.origin}/allproducts`)
           .then((response)=> response.json())
           .then((data)=> setAll_Product(data))
 
            if(localStorage.getItem('auth-token')){
-            fetch('https://mern-eight-gray.vercel.app/getcart', {
+            fetch(`${window.location.origin}/getcart`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -48,7 +48,7 @@ const ShopContextProvider = (props) => {
              setCartItem((prev) => ({... prev, [itemId]:prev[itemId]+ 1 }))
              setPopupMessage('Item added to cart successfully!');
              setShowPopup(true);
-             fetch('https://mern-eight-gray.vercel.app/addtocart', {
+             fetch(`${window.location.origin}/addtocart`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -84,7 +84,7 @@ const ShopContextProvider = (props) => {
      const removeFromCart = (itemId) => {
         setCartItem((prev) => ({... prev, [itemId]:prev[itemId]- 1}))
         if(localStorage.getItem('auth-token')){
-            fetch('https://mern-eight-gray.vercel.app/removefromcart', {
+            fetch(`${window.location.origin}/removefromcart`, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -129,7 +129,7 @@ const ShopContextProvider = (props) => {
 
     // const checkout = async() => {
     //     try {
-    //         const res = await fetch("https://mern-eight-gray.vercel.app/checkout",{
+    //         const res = await fetch("${window.location.origin}/checkout",{
     //             method: "POST",
     //             headers: {
     //                 "content-type": "application/json",

@@ -12,7 +12,7 @@ const cors = require("cors");
 
 
 app.use(express.json());
-app.use(cors({origin: "https://mern-eight-gray.vercel.app"}));
+app.use(cors({}));
 
 mongoose.connect("mongodb+srv://harshilpatel29072003:14OoUFt6aX4Fa3RV@cluster1.sn0qg1d.mongodb.net/E-commerce")
 
