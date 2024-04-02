@@ -116,12 +116,13 @@ font-size: 16px;
 }
 
 .related{
-    margin-top: 70px;
+    margin-top: 60px;
     display: flex;
     align-items: cener;
     flex-direction: row;
-    margin-right: 0px;
+    margin-right: -190px;
     justify-content: center;
+    
 }
 
 .desc{
@@ -129,5 +130,5 @@ font-size: 16px;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    margin-left: 0px;
+    margin-left: -50px;
 }
