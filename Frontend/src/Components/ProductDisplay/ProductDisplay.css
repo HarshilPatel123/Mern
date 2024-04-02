@@ -1,7 +1,13 @@
 .productdisplay{
     display: flex;
     margin: 0px 170px;
+    flex-direction: column;
 
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
 }
 
 .productdisplay-left{
@@ -84,6 +90,10 @@ font-size: 16px;
     border: 1px solid #ebebeb;
 }
 
+.productdisplay-right-sizes div.selected{
+    background-color: aqua;
+}
+
 .productdisplay-right button{
     padding: 20px 40px;
     width: 200px;
@@ -103,4 +113,21 @@ font-size: 16px;
 
 .productdisplay-right-category span{
     font-weight: 600;
+}
+
+.related{
+    margin-top: 70px;
+    display: flex;
+    align-items: cener;
+    flex-direction: row;
+    margin-right: 0px;
+    justify-content: center;
+}
+
+.desc{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 0px;
 }

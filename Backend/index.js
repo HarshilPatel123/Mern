@@ -237,11 +237,12 @@ app.get('/newCollection', async(req, res)=> {
 
 app.get('/relatedCollection', async(req, res)=> {
   
-    let products = await Product.find({category: "Men" });
+    let products = await Product.find({});
     // console.log(products);
-    let newCollection = products.slice(1).slice(-4);
+    let relatedCollection = products.slice(1).slice(-25);
     console.log("Related Collection Fetched !!");
-    res.send(newCollection)
+    // console.log(newCollection);
+    res.send(relatedCollection)
 
 })
 
