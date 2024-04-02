@@ -28,7 +28,7 @@ const isContinueDisabled = () => {
 
            console.log("Login Function Executed!!!", formData);
            let responsed;
-           await fetch("http://localhost:5000/login", {
+           await fetch("https://mern-eight-gray.vercel.app/login", {
            method: 'POST',
            headers: {
             Accept: 'application/form-data',
@@ -52,7 +52,7 @@ const isContinueDisabled = () => {
    const SignUp = async () => {
          let responseData;
          console.log("Sign up function Executed !!", formData);
-         await fetch("http://localhost:5000/signup", {
+         await fetch("https://mern-eight-gray.vercel.app/signup", {
           method: 'POST',
           headers: {
             Accept: 'application/form-data',
