@@ -8,13 +8,27 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require('path')
 const cors = require("cors");
+const env = require('dotenv');
+const stripe = require('stripe')("sk_test_51OixYeSJSxoo0pOpJ1VZeZv5ZGoGLr0WxGBE87nw9D5CGRQpHFdtgmW5Lr7zldgwWbvY9UXe6Ijf1yDLrjfcEGwx00VwscGxon");
+
+
+
+
 
 
 
 app.use(express.json());
 app.use(cors());
+env.configDotenv()
 
-mongoose.connect("mongodb+srv://harshilpatel29072003:14OoUFt6aX4Fa3RV@cluster1.sn0qg1d.mongodb.net/E-commerce")
+mongoose.connect(process.env.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true } )
+.then(() => {
+    console.log('Connected to MongoDB');
+    // Start your server or perform other actions here
+  })
+  .catch(error => {
+    console.error('Error connecting to MongoDB:', error);
+  });
 
 //  const instance = new Razorpay({
 //     key_id: "rzp_test_5AI1hcWWmUdOL4",
@@ -305,6 +319,80 @@ app.post('/getcart', fetchUser, async(req,res)=> {
 
 
 // Payment Gateway
+
+// app.post("/create-checkout-session", async(req, res) => {
+//     // const {Products, Total_Payable}= req.body;
+//     // const all_product = req.body;
+    // const cartItem = req.body
+    // console.log("Type of all_product:", typeof all_product);
+    // console.log(Products);
+    // console.log(Total_Payable);
+    // console.log(all_product);
+    // console.log(cartItem);
+    // all_product.forEach((product) => {
+    //     // Access individual product data here
+    //     console.log(product);
+    //     // Now you can access properties of each product, for example:
+    //     console.log("Product name:", product.name);
+    //     console.log("Product price:", product.price);
+    // })
+//    const data =  all_product.map((e) => {
+//          {
+//              name1 = e.name
+//              price = e.new_price
+//              quantity = cartItem[e.id]
+             
+   
+//         }}
+//         )
+//         console.log(data);
+
+    
+
+//   const session = await stripe.checkout.sessions.create({
+//     payment_method_types:["card"],
+//     line_items: [
+//       {
+//         price_data: {
+//           currency: 'usd',
+//           product_data: {
+//             name: 'T-shirt',
+//           },
+//           unit_amount: 2000,
+//         },
+//         quantity: 1,
+//       },
+//     ],
+//     mode: 'payment',
+//     success_url: 'http://localhost:4242/success',
+//     cancel_url: 'http://localhost:4242/cancel',
+//   });
+    
+  
+
+    // const lineItems = all_product.map((product) => ({
+    //   price_data : { 
+    //      currency: "inr",
+    //      product_data:{
+    //      name: product.name
+
+    //     },
+    //     unit_amount: Total_Payable * 100,
+    //  },
+    //  quantity: product
+    // }))
+    
+    // const session = await stripe.checkout.sessions.create({
+
+    //     line_items: lineItems,
+    //     mode: "payment",
+    //     success_url: "http://localhost:5173/success",
+    //     cancel_url: "http://localhost:5173/cancel"
+    // });
+
+//     res.json({id: session.id})
+// })
+
 
 
 app.listen(port, (error)=> {

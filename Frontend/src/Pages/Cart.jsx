@@ -1,14 +1,51 @@
 
 import { useContext } from 'react'
 import { ShopContext } from '../Context/ShopContext'
+import {loadStripe} from '@stripe/stripe-js';
 
 import './Css/Cart.css'
 import { Link } from 'react-router-dom'
 // import Checkout from './Checkout'
 
 const Cart = () => {
-
+     
     const { all_product, cartItem, getTotalCartItems, getTotalCartAmount, removeFromCart } = useContext(ShopContext)
+   
+    console.log("Type of all_product:", typeof all_product);
+    console.log("Content of all_product:", all_product);
+//  const payment = async() => {
+  
+//       // eslint-disable-next-line no-undef
+    
+
+//       const stripe = await loadStripe("pk_test_51OixYeSJSxoo0pOpm49lPxt9RYZ7q4NP3Pf8OV6LtnBZlOfbX8LE8di7tJtEz8QteVBHXfNp8wvirQtd0FfZfam500PylHPWE1")
+//       const body = {
+//         Item: cartItem,
+//         all: all_product,
+//         Products: getTotalCartItems(),
+//         Total_Payable: getTotalCartAmount()
+//     }
+//     const headers = {
+//       "Content-type": "application/json"
+//     }
+//     const response = await fetch("http://localhost:5000/create-checkout-session",{
+//       method: 'POST',
+//       headers: headers,
+//       body: JSON.stringify(body)
+//     });
+      
+//     const session = await response.json();
+
+//     const result = stripe.redirectToCheckout({
+//       sessionId: session.id
+//     });
+
+//     if(result.error){
+//       console.log(result.error);
+//     }
+
+//   }
+
 
     return (
         <div className='cartitems'>
@@ -47,7 +84,7 @@ const Cart = () => {
                   <div className="cartitems-total-item">
                     
                     <p> SubTotal </p>
-                    <p> ${getTotalCartAmount()}</p>
+                    <p> {getTotalCartAmount()}</p>
                   </div>
                   <hr/>
                   <div className="cartitems-total-item">
@@ -57,10 +94,11 @@ const Cart = () => {
                   <hr/>
                   <div className="cartitems-total-item">
                     <h3> Total </h3>
-                    <h3> ${getTotalCartAmount()}</h3>
+                    <h3> {getTotalCartAmount()}</h3>
                   </div>
                 </div>
                 <button> {getTotalCartItems() > 0? <Link to={"/checkout"} >PROCEED TO CHECKOUT</Link> : <p> PROCEED TO CHECKOUT</p>} </button>
+                {/* <button onClick={() => payment()}>   PROCEED TO CHECKOUT </button> */}
               </div>
               <div className='cartitems-promocode'>
                 <p> If you have a Promo Code, Enter it here </p>

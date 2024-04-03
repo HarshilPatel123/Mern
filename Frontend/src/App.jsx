@@ -10,7 +10,9 @@ import LoginSignup from './Pages/LoginSignup'
 import men_banner from './Components/assets/Assets/banner_mens.png'
 import women_banner from './Components/assets/Assets/banner_women.png'
 import kid_banner from './Components/assets/Assets/banner_kids.png'
-import PaymentSuccess from './Pages/PaymentSuccess'
+import Success from './Components/Success'
+import Cancel from './Components/Cancel'
+// import PaymentSuccess from './Pages/PaymentSuccess'
 
 
 const App = () => {
@@ -29,7 +31,9 @@ const App = () => {
         <Route path='/cart' element={<Cart></Cart>} />
         <Route path='/checkout' element={<Checkout></Checkout>} />
         <Route path='/login' element={<LoginSignup></LoginSignup>} />
-        <Route path='/paymentsuccess' element={<PaymentSuccess/>}/>
+        <Route path='/success' element={<Success></Success>} />
+        <Route path='/cancel' element={<Cancel></Cancel>} />
+        
 
       </Routes>
       <Footer/>
