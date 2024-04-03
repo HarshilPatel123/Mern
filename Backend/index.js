@@ -1,6 +1,6 @@
 
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -9,9 +9,8 @@ const multer = require("multer");
 const path = require('path')
 const cors = require("cors");
 const env = require('dotenv');
-const stripe = require('stripe')("sk_test_51OixYeSJSxoo0pOpJ1VZeZv5ZGoGLr0WxGBE87nw9D5CGRQpHFdtgmW5Lr7zldgwWbvY9UXe6Ijf1yDLrjfcEGwx00VwscGxon");
 
-
+require("dotenv").config();
 
 
 
@@ -19,9 +18,9 @@ const stripe = require('stripe')("sk_test_51OixYeSJSxoo0pOpJ1VZeZv5ZGoGLr0WxGBE8
 
 app.use(express.json());
 app.use(cors());
-env.configDotenv()
 
-mongoose.connect(process.env.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true } )
+
+mongoose.connect(process.env.MONGO_URL)
 .then(() => {
     console.log('Connected to MongoDB');
     // Start your server or perform other actions here
