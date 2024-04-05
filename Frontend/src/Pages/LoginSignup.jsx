@@ -52,6 +52,7 @@ const isContinueDisabled = () => {
    const SignUp = async () => {
          let responseData;
          console.log("Sign up function Executed !!", formData);
+         console.log(formData.email);
          await fetch("http://localhost:5000/signup", {
           method: 'POST',
           headers: {
@@ -97,7 +98,7 @@ const isContinueDisabled = () => {
           <p> By continuing, I agree the terms of use & privacy policy. </p>
         </div>
         { error && state=== "Login" && <p style={{color: "red", marginTop: "6px", fontSize: "20px", marginLeft:"30px"}}> Wrong Credentials !! Please try again with different User !!</p> }
-        { error && state=== "Sign Up" && <p style={{color: "red", marginTop: "6px", fontSize: "20px", marginLeft: "30px"}}> Every Field required to fill  !!!</p> }
+        { error && state=== "Sign Up" && <p style={{color: "red", marginTop: "6px", fontSize: "20px", marginLeft: "30px"}}> Wrong Credentials OR User is already registered !!!</p> }
        <button onClick={()=> {state === "Login"? login() : SignUp()}}  disabled={isContinueDisabled()}> Continue </button>
         { state === "Sign Up" ? <p className='loginsignup-login'> Already have an account? <span onClick={() => {setState("Login")}}> Login here </span></p> : <></>}
         { state === "Login" ? <p className='loginsignup-login'> Create an Account <span onClick={()=> {setState("Sign Up")}}> Click here </span></p> : <></>}

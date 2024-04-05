@@ -12,6 +12,7 @@ import women_banner from './Components/assets/Assets/banner_women.png'
 import kid_banner from './Components/assets/Assets/banner_kids.png'
 import Success from './Components/Success'
 import Cancel from './Components/Cancel'
+import Order from './Pages/Order'
 // import PaymentSuccess from './Pages/PaymentSuccess'
 
 
@@ -33,7 +34,7 @@ const App = () => {
         <Route path='/login' element={<LoginSignup></LoginSignup>} />
         <Route path='/success' element={<Success></Success>} />
         <Route path='/cancel' element={<Cancel></Cancel>} />
-        
+        <Route path='/orders' element={<Order></Order>}/>
 
       </Routes>
       <Footer/>

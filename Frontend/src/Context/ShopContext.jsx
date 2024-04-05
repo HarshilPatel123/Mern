@@ -19,6 +19,7 @@ const ShopContextProvider = (props) => {
     const[all_product, setAll_Product] = useState([])
     const [showPopup, setShowPopup] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
+
    
     const [cartItem, setCartItem] = useState(getDefaultCart());
 
@@ -40,6 +41,9 @@ const ShopContextProvider = (props) => {
             }).then((res)=> res.json()).then((data)=> setCartItem(data))
            }
          }, [])
+
+        
+      
 
 
      const addToCart = (itemId) => {
@@ -78,6 +82,8 @@ const ShopContextProvider = (props) => {
     setShowPopup(false);
     setPopupMessage('');
   };
+
+
 
 
     
@@ -127,30 +133,8 @@ const ShopContextProvider = (props) => {
         return totalItem
     }
 
-    // const checkout = async() => {
-    //     try {
-    //         const res = await fetch("http://localhost:5000/checkout",{
-    //             method: "POST",
-    //             headers: {
-    //                 "content-type": "application/json",
-    //             },
-    //             mode: "cors",
-    //             body:JSON.stringify({
-    //                 items: {
-    //                     quantity: getTotalCartAmount(),
-    //                     totalItem: getTotalCartItems()
-    //                 },
-    //             })
-    //         });
-    //         const data = await res.json();
-    //         window.location = data.url;
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
 
-
-     const contextValue = { all_product,getDefaultCart,  setCartItem, getTotalCartAmount,getTotalCartItems, showPopup, popupMessage, handleClosePopup,cartItem, addToCart, removeFromCart};
+     const contextValue = { all_product,getDefaultCart,  setCartItem, setAll_Product, getTotalCartAmount,getTotalCartItems, showPopup, popupMessage, handleClosePopup,cartItem, addToCart, removeFromCart};
     
 
     return (
