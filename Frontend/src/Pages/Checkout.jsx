@@ -1,14 +1,16 @@
 
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './Css/Checkout.css'
 import Shop from '../Pages/Shop'
-import NavBar from '../Components/NavBar'
+
+import { ShopContext } from '../Context/ShopContext'
 
 
 
 const Checkout = (props) => {
 
   const [seconds, setSeconds] = useState(20)
+  const {setCartItem, getDefaultCart} = useContext(ShopContext)
 
   // Function to decrement seconds by 1
   const decrementSeconds = () => {
@@ -21,6 +23,9 @@ const Checkout = (props) => {
     return () => clearInterval(interval); // Cleanup function to clear interval
   }, []); // Empty dependency array ensures ef
 
+  useEffect(()=>{
+      setCartItem(getDefaultCart())
+  }, [setCartItem])
 
 
   return (

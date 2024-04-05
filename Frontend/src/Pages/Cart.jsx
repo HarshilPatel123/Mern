@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
      
-    const { all_product, cartItem, setCartItem, getDefaultCart, getTotalCartItems, getTotalCartAmount, removeFromCart } = useContext(ShopContext)
+    const { all_product, cartItem,  getTotalCartItems, getTotalCartAmount, removeFromCart } = useContext(ShopContext)
    
     console.log("Type of all_product:", typeof all_product);
     console.log("Content of all_product:", all_product);
