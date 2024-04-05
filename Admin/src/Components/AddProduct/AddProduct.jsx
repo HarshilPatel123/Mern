@@ -55,7 +55,7 @@ const AddProduct = () => {
             },
             body:JSON.stringify(product)
           }).then((res) => res.json()).then((data)=> {
-            data.success? alert("Product Added"): alert("Failed")
+            data.success? alert("Product Added") : alert("Failed")
           })
           
       }
@@ -95,7 +95,7 @@ const AddProduct = () => {
         </label>
         <input onChange={imageHandler} type='file' name='image' id='file-input' hidden/>
        </div>
-       <button onClick={Add}className='addproduct-btn'> Add Product </button>
+       <button onClick={Add}className='addproduct-btn'> Add Product </button> 
     </div>
   )
 }

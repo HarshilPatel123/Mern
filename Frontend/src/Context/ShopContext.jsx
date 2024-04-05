@@ -150,7 +150,7 @@ const ShopContextProvider = (props) => {
     // }
 
 
-     const contextValue = { all_product, getTotalCartAmount,getTotalCartItems, getDefaultCart, showPopup, popupMessage, handleClosePopup,cartItem, addToCart, removeFromCart};
+     const contextValue = { all_product,getDefaultCart,  setCartItem, getTotalCartAmount,getTotalCartItems, showPopup, popupMessage, handleClosePopup,cartItem, addToCart, removeFromCart};
     
 
     return (

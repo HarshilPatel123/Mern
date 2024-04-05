@@ -1,7 +1,7 @@
 
 import { useContext } from 'react'
 import { ShopContext } from '../Context/ShopContext'
-import {loadStripe} from '@stripe/stripe-js';
+
 
 import './Css/Cart.css'
 import { Link } from 'react-router-dom'
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
      
-    const { all_product, cartItem, getTotalCartItems, getTotalCartAmount, removeFromCart } = useContext(ShopContext)
+    const { all_product, cartItem, setCartItem, getDefaultCart, getTotalCartItems, getTotalCartAmount, removeFromCart } = useContext(ShopContext)
    
     console.log("Type of all_product:", typeof all_product);
     console.log("Content of all_product:", all_product);
@@ -97,7 +97,7 @@ const Cart = () => {
                     <h3> {getTotalCartAmount()}</h3>
                   </div>
                 </div>
-                <button> {getTotalCartItems() > 0? <Link to={"/checkout"} >PROCEED TO CHECKOUT</Link> : <p> PROCEED TO CHECKOUT</p>} </button>
+                <button> {getTotalCartItems() > 0? <Link to={"/checkout"} >  <p > PROCEED TO CHECKOUT </p></Link> : <p> PROCEED TO CHECKOUT</p>} </button>
                 {/* <button onClick={() => payment()}>   PROCEED TO CHECKOUT </button> */}
               </div>
               <div className='cartitems-promocode'>

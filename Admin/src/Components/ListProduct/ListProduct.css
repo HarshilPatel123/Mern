@@ -39,6 +39,10 @@
 .listproduct-remove-icon{
     cursor: pointer;
     margin: auto;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    width: max-content;
 }
 
 .listproduct-allproducts{

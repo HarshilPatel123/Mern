@@ -6,7 +6,9 @@ const ListProduct = () => {
   const [allProducts, setAllProducts] = useState([]);
 
   const fetchInfo = async () => {
-    await fetch('http://localhost:5000/allproducts').then((res) => res.json()).then((data) => { setAllProducts(data) })
+    await fetch('http://localhost:5000/allproducts')
+    .then((res) => res.json())
+    .then((data) => { setAllProducts(data) })
   }
 
 
@@ -22,7 +24,7 @@ const ListProduct = () => {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
-                'Content-type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({ id: id})
         })
@@ -55,8 +57,8 @@ const ListProduct = () => {
             <p> ${products.old_price}</p>
             <p> ${products.new_price}</p>
             <p> {products.category}</p>
-            <button onClick={remove_product} className='listproduct-remove-icon'>
-              Remove
+            <button onClick={() => remove_product(products.id)} className='listproduct-remove-icon'>
+              Delete
             </button>
           </div>
           <hr/>
