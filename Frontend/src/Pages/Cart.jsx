@@ -28,7 +28,7 @@ const Cart = () => {
 //     const headers = {
 //       "Content-type": "application/json"
 //     }
-//     const response = await fetch("http://localhost:5000/create-checkout-session",{
+//     const response = await fetch("https://mern-5-nqn4.onrender.com/create-checkout-session",{
 //       method: 'POST',
 //       headers: headers,
 //       body: JSON.stringify(body)

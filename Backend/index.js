@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require('path')
 const cors = require("cors");
-const dotenv = require('dotenv');
+const env = require('dotenv');
 const { type } = require("os");
 
 require("dotenv").config();

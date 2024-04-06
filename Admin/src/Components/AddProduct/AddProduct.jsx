@@ -30,6 +30,7 @@ const AddProduct = () => {
 
   let response;
   let formData = new FormData();
+  console.log(formData);
   formData.append('product', image);
 
   try {
