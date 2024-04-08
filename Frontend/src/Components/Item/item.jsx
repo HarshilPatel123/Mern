@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './Item.css'
 
+
 const item = (props) => {
   return (
     <div className='item'>
@@ -15,6 +16,7 @@ const item = (props) => {
                 {props.old_price}
             </div>
         </div>
+        
     </div>
   )
 }

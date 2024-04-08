@@ -5,6 +5,7 @@ import Item  from '../Item/item'
 import { useEffect, useState } from 'react'
 
 
+
 const Popular = () => {
 
   const [popular, setPopular] = useState([])
@@ -30,6 +31,7 @@ const Popular = () => {
                     />
         })}
       </div>
+     
     </div>
   )
 }

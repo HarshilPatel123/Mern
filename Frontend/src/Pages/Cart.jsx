@@ -2,7 +2,7 @@
 import { useContext } from 'react'
 import { ShopContext } from '../Context/ShopContext'
 
-
+import Footer from '../Components/Footer/Footer'
 import './Css/Cart.css'
 import { Link } from 'react-router-dom'
 // import Checkout from './Checkout'
@@ -108,7 +108,7 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-
+         <Footer/>
         </div>
 
     )

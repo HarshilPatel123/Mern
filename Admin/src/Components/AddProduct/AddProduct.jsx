@@ -1,6 +1,8 @@
 import './AddProduct.css'
 import upload_area from '../../assets/upload_area.svg'
+
 import { useState } from 'react'
+import SideBar from '../SideBar/SideBar'
 const AddProduct = () => {
  
  const [image, setImage] = useState(false);
@@ -65,7 +67,8 @@ const AddProduct = () => {
   }
 };
  
-  return (
+  return (<>
+
     <div className="addproduct">
        <div className='addproduct-itemfield'>
         <p> Product Title</p>
@@ -98,6 +101,7 @@ const AddProduct = () => {
        </div>
        <button onClick={Add}className='addproduct-btn'> Add Product </button> 
     </div>
+    </>
   )
 }
 

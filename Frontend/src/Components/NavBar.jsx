@@ -33,7 +33,7 @@ export const NavBar = (props) => {
                        
                         <div className="nav-login-cart">
 
-                        <Link onClick={()=> setMenu("")} to="orders"><button > My Orders</button></Link>
+                        
 
                             {localStorage.getItem('auth-token') ? <button onClick={()=> {localStorage.removeItem('auth-token'); window.location.replace('/')}}>Logout</button>:
                              <Link onClick={()=> setMenu("")} to="/login"><button> Login </button></Link>}

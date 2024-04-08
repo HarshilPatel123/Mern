@@ -4,6 +4,7 @@ import star_icon from '../assets/Assets/star_dull_icon.png';
 import star_dull_icon from '../assets/Assets/star_dull_icon.png'
 import Popup from '../../Context/Popup';
 import { useContext } from 'react';
+
 import { ShopContext } from '../../Context/ShopContext';
 import RelatedProducts from '../RelatedProducts/RelatedProducts';
 import Description from '../DescriptionBox/Description';
@@ -77,6 +78,7 @@ const ProductDisplay = (props) => {
     <div  className='related'>
       <RelatedProducts id={product.id} category={product.category} />
       </div>
+    
     </div>
   )
 }
