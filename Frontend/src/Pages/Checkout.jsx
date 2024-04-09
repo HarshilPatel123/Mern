@@ -2,11 +2,11 @@
 import { useEffect, useState } from 'react'
 import './Css/Checkout.css'
 import Shop from '../Pages/Shop'
-import NavBar from '../Components/NavBar'
 
 
 
-const Checkout = (props) => {
+
+const Checkout = () => {
 
   const [seconds, setSeconds] = useState(20)
   

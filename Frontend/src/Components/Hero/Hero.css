@@ -73,12 +73,15 @@
    
     margin-left: 10px;
     margin-right: 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: aquamarine;
 
 
 }
 .hero-leftnew:hover{
     transform: scale(1.10);
-    transition: 0.6s;
+    transition: 0.5s;
   
 }
 
