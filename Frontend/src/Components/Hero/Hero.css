@@ -68,3 +68,24 @@
 .hero-right img{
     height: 670px;
 }
+
+.hero-leftnew{
+   
+    margin-left: 10px;
+    margin-right: 50px;
+
+
+}
+.hero-leftnew:hover{
+    transform: scale(1.10);
+    transition: 0.6s;
+  
+}
+
+ .combine{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+      justify-content: center;
+
+} 

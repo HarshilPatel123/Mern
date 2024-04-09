@@ -40,7 +40,7 @@ const App = () => {
         
 
       </Routes>
-    
+    <Footer/>
      </BrowserRouter>
     </>
   )
