@@ -1,8 +1,8 @@
 import './Hero.css'
 import hand_icon from '../assets/Assets/hand_icon.png'
 import arrow_icon from '../assets/Assets/arrow.png';
-import hero_image from '../assets/Assets/hero_image.png'
-import hero from '../assets/Assets/hero2.jpg'
+import hero3 from '../assets/Assets/hero3.png'
+
 
 
 
@@ -27,13 +27,13 @@ const Hero = () => {
            </div>
         </div>
         <div className="combine">
-        <div className='hero-leftnew'>
+        {/* <div className='hero-leftnew'>
           <img src={hero} alt=''
           width={600} height={500}/>
 
-        </div>
+        </div> */}
         <div className='hero-right'>
-          <img src={hero_image} alt=''/>
+          <img src={hero3} alt=''/>
 
         </div>
         </div>

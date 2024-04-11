@@ -19,29 +19,26 @@ import kid_banner from './Components/assets/Assets/banner_kids.png'
 const App = () => {
   return (
     <>
-     <BrowserRouter>
-     <NavBar/>
-      <Routes>
-        <Route path='/' element={<Shop></Shop>} />
-        <Route path='/mens' element={<ShopCategory category="Men" banner = {men_banner}></ShopCategory>} />
-        <Route path='/womens' element={<ShopCategory  category="Women"  banner = {women_banner}></ShopCategory>} />
-        <Route path='/kids' element={<ShopCategory  category="Kid" banner={kid_banner}></ShopCategory>} />
-        <Route path='/product' element={<Product></Product>} >
-         <Route path=':productId' element={<Product></Product>} />
-        </Route>
-        <Route path='/cart' element={<Cart></Cart>} />
-        <Route path='/checkout' element={<Checkout></Checkout>} />
-        <Route path='/login' element={<LoginSignup></LoginSignup>} />
-        {/* <Route path='/addproduct' element={<AddProduct/>} />
-        <Route path='/listproduct' element={<ListProduct/>} />
-        
-        <Route path='/admin' element={<Admine/>} /> */}
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Shop></Shop>} />
+          <Route path='/mens' element={<ShopCategory category="Men" banner={men_banner}></ShopCategory>} />
+          <Route path='/womens' element={<ShopCategory category="Women" banner={women_banner}></ShopCategory>} />
+          <Route path='/kids' element={<ShopCategory category="Kid" banner={kid_banner}></ShopCategory>} />
+          <Route path='/product' element={<Product></Product>} >
+            <Route path=':productId' element={<Product></Product>} />
+          </Route>
+          <Route path='/cart' element={<Cart></Cart>} />
+          <Route path='/checkout' element={<Checkout></Checkout>} />
+          <Route path='/login' element={<LoginSignup></LoginSignup>} />
 
-        
 
-      </Routes>
-    <Footer/>
-     </BrowserRouter>
+
+
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   )
 }

@@ -2,6 +2,10 @@
     height: 100vh;
     background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
     display: flex;
+    background-image: url('../assets/Assets/hero2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
 }
 
 .hero-left{
@@ -17,9 +21,9 @@
 }
 
 .hero-left h2{
-    color: #090909;
-    font-size: 26px;
-    font-weight: 700;
+    color: #000000;
+    font-size: 28px;
+    font-weight: 900;
 }
 
 
@@ -36,7 +40,7 @@
 }
 
 .hero-hand-icon img{
-    width: 100px;
+    width: 120px;
     height: 150px;
     margin-left: 20px;
 
@@ -62,6 +66,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 60px;
+    margin-bottom: 0px;
+    margin-top: 0px;
 
 }
 
@@ -79,11 +86,7 @@
 
 
 }
-.hero-leftnew:hover{
-    transform: scale(1.10);
-    transition: 0.5s;
-  
-}
+
 
  .combine{
     display: flex;
