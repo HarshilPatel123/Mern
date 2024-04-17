@@ -10,6 +10,7 @@ import LoginSignup from './Pages/LoginSignup'
 import men_banner from './Components/assets/Assets/banner_mens.png'
 import women_banner from './Components/assets/Assets/banner_women.png'
 import kid_banner from './Components/assets/Assets/banner_kids.png'
+import NewCollections from './Components/NewCollections/NewCollections'
 
 
 
@@ -32,6 +33,7 @@ const App = () => {
           <Route path='/cart' element={<Cart></Cart>} />
           <Route path='/checkout' element={<Checkout></Checkout>} />
           <Route path='/login' element={<LoginSignup></LoginSignup>} />
+          <Route path='/newCollection' element={<NewCollections></NewCollections>} />
 
 
 

@@ -22,6 +22,12 @@
     font-size: 80px;
     font-weight: 600;
 }
+.offers-left button{
+    color: #3f2a2a;
+    font-size: 80px;
+    font-weight: 600;
+    text-decoration: none;
+}
 
 .offers-left p{
     color: #171717;

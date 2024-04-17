@@ -67,7 +67,7 @@ const ShopContextProvider = (props) => {
         }
         else{
             
-             setPopupMessage("You need to login before you purchase any Item !!!")
+             setPopupMessage("You need to Sign Up before you purchase any Item !!!")
              setShowPopup(true);
       
             
@@ -88,8 +88,8 @@ const ShopContextProvider = (props) => {
 
     
      const removeFromCart = (itemId) => {
-        setCartItem((prev) => ({... prev, [itemId]:prev[itemId]- 1}))
-        if(localStorage.getItem('auth-token')){
+         if(localStorage.getItem('auth-token')){
+            setCartItem((prev) => ({... prev, [itemId]:prev[itemId]- 1}))
             fetch('http://localhost:5000/removefromcart', {
                 method: 'POST',
                 headers: {

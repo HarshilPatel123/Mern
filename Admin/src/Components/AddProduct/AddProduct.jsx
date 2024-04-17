@@ -2,7 +2,7 @@ import './AddProduct.css'
 import upload_area from '../../assets/upload_area.svg'
 
 import { useState } from 'react'
-import SideBar from '../SideBar/SideBar'
+
 const AddProduct = () => {
  
  const [image, setImage] = useState(false);

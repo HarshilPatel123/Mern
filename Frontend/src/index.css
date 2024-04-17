@@ -6,3 +6,8 @@
 *{
     margin: 0;
 }
+
+body{
+    font-family: "New York", Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji,
+    sans-serif;
+}

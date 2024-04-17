@@ -22,7 +22,7 @@
 
 .collections{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.2fr 1.2fr 1.2fr 1.2fr;
     margin-top: 50px;
-    gap: 30px;
+    gap: 40px;
 }

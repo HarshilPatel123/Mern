@@ -3,7 +3,7 @@ import './Css/Loginsignup.css'
 
 const LoginSignup = () => {
 
-  const [state, setState] = useState("Login")
+  const [state, setState] = useState("Sign In")
   const [isChecked, setIsChecked] = useState(false);
   const [error, setError] = useState(false)
  
@@ -119,11 +119,11 @@ const fieldChangeHandler = (e) => {
          <input type="checkbox"  checked={isChecked} onChange={toggleCheckbox}  name="c1" id='c1'/>
           <p> By continuing, I agree the terms of use & privacy policy. </p>
         </div>
-        { error && state=== "Login" && <p style={{color: "red", marginTop: "6px", fontSize: "20px", marginLeft:"30px"}}> Wrong Credentials !! Please try again with different User !!</p> }
+        { error && state=== "Sign In" && <p style={{color: "red", marginTop: "6px", fontSize: "20px", marginLeft:"30px"}}> Wrong Credentials !! Please try again with different User !!</p> }
         { error && state=== "Sign Up" && <p style={{color: "red", marginTop: "6px", fontSize: "20px", marginLeft: "30px"}}> Wrong Credentials OR User is already registered !!!</p> }
-       <button onClick={()=> {state === "Login"? login() : SignUp()}}  disabled={isContinueDisabled()}> Continue </button>
-        { state === "Sign Up" ? <p className='loginsignup-login'> Already have an account? <span onClick={() => {setState("Login")}}> Login here </span></p> : <></>}
-        { state === "Login" ? <p className='loginsignup-login'> Create an Account <span onClick={()=> {setState("Sign Up")}}> Click here </span></p> : <></>}
+       <button onClick={()=> {state === "Sign In"? login() : SignUp()}}  disabled={isContinueDisabled()}> Continue </button>
+        { state === "Sign Up" ? <p className='loginsignup-login'> Already have an account? <span onClick={() => {setState("Sign In")}}> Sign In here </span></p> : <></>}
+        { state === "Sign In" ? <p className='loginsignup-login'> Create an Account <span onClick={()=> {setState("Sign Up")}}> Click here </span></p> : <></>}
        
       </div>
       
